@@ -307,7 +307,7 @@
 <span id="13"></span>
 13. **语音合成（Text To Speech）**
 - 文本转语音，传统方法是采用语素拼接，这种方式合成的语音比较生硬，没有语调。当前Baidu、Google、FaceBook等出了很多基于深度学习的方法。一般的流程是先Encoder再Decoder，最后用Griffin-Lim算法或者WaveNet自回归模型将MFCC变成wave信号。
-  WaveNet系列（MFCCWAVE）、DeepVoice系列、Tacotron系列、VoiceLoop、ClariNet
+  WaveNet系列（MFCC-->WAVE）、DeepVoice系列、Tacotron系列、VoiceLoop、ClariNet
 
 + 相关论文：
   ```
