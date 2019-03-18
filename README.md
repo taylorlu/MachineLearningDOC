@@ -349,10 +349,12 @@
   1. DEX: Deep EXpectation of apparent age from a single image
   2. Age Progression/Regression by Conditional Adversarial Autoencode
   3. SSR-Net: A Compact Soft Stagewise Regression Network for Age Estimation
+  4. Deep Regression Forests for Age Estimation
   ```
 + 相关开源地址：
   * https://github.com/truongnmt/multi-task-learning
   * https://github.com/ZZUTK/Face-Aging-CAAE
   * https://github.com/yu4u/age-gender-estimation
   * https://github.com/shamangary/SSR-Net
+  * https://github.com/shenwei1231/caffe-DeepRegressionForests
   
