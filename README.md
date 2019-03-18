@@ -13,6 +13,7 @@
 ##### 12.  [说话人语音分割（Speaker Diarization）](#12)
 ##### 13.  [语音合成（Text To Speech）](#13)
 ##### 14.  [声纹转换（Voice Conversion）](#14)
+##### 15.  [人脸生物特征（Age Gender）](#15)
 
 <span id="1"></span>
 1. **通用物体检测和识别（General Object Detection/Recognition）**
@@ -339,3 +340,18 @@
   * https://github.com/Rayhane-mamah/Tacotron-2
   * https://github.com/GSByeon/multi-speaker-tacotron-tensorflow
 
+<span id="15"></span>
+14.	**人脸生物特征（Age Gender Estimate）**
+- 经典的DEX模型，SSR-NET精简模型
++ 相关论文：
+  ```
+  1. DEX: Deep EXpectation of apparent age from a single image
+  2. Age Progression/Regression by Conditional Adversarial Autoencode
+  3. SSR-Net: A Compact Soft Stagewise Regression Network for Age Estimation
+  ```
++ 相关开源地址：
+  * https://github.com/truongnmt/multi-task-learning
+  * https://github.com/ZZUTK/Face-Aging-CAAE
+  * https://github.com/yu4u/age-gender-estimation
+  * https://github.com/shamangary/SSR-Net
+  
