@@ -225,6 +225,7 @@
   7. VDub: Modifying Face Video of Actors for Plausible Visual Alignment to a Dubbed Audio Track
   8. paGAN: Real-time Avatars Using Dynamic Textures
   9. On Face Segmentation, Face Swapping, and Face Perception
+  10. Extreme 3D Face Reconstruction: Looking Past Occlusions
   ```
 + 相关开源地址:
   * https://github.com/YadiraF/PRNet
@@ -232,6 +233,7 @@
   * https://github.com/deepfakes/faceswap
   * https://github.com/datitran/face2face-demo
   * https://github.com/YuvalNirkin/face_swap
+  * https://github.com/anhttran/extreme_3d_faces
 
 <span id="9"></span>
 9. **OCR字符识别**
