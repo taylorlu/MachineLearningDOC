@@ -73,10 +73,9 @@
 
 <span id="2"></span>
 2. **特定物体检测和识别和检索（Specific Object Detection/CBIR）**
-  - 特定物体只识别一张特定的图，不能进行大样本训练，也即不需要进行训练和学习。大多数只是用Artificial Feature手工特征，比如特征点，而且对于刚性物体，特征点匹配可以用SVD分解计算出仿射变换矩阵，进而判断物体边缘的方向。
+  - 特定物体只识别一张特定的图，不能进行大样本训练，也即不需要进行训练和学习。大多数只是用Artificial Feature手工特征，比如特征点，而且对于刚性物体，特征点匹配可以用SVD分解和RANSAC计算出仿射变换矩阵，进而判断物体边缘的方向。也有基于神经网络的，如R-MAC，NetVlad，但用的都是预训练模型，不具有旋转不变性。
   - 特征点匹配，基于欧氏距离的，如SIFT/SURF，基于海明距离的，如AKAZE/FREAK，欧氏距离的检索可以用KD-Tree或者其他算法如hnsw、Falconn，海明距离的检索用LSH。
   - 基于Fisher Vector/VLAD，采用随机超平面的方式切换成海明距离进行检索
-  - 基于神经网络的，sPoC特征，R-MAC，NetVlad用的都是预训练模型。
   - 检索，基于欧式距离的检索有hnsw、Falconn、Faiss等开源库。
 + 相关论文：
   ```
