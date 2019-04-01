@@ -297,15 +297,17 @@
 
 <span id="12"></span>
 12. **说话人语音分割（Speaker Diarization）**
-- 语音智能分割是基于说话人识别的，说话人识别效果的好坏决定语音分割的效果，当然还有切换点的识别效果也很重要。首先需要用VAD静音检测对语音进行分割，最简单的是用振幅来判断，如果有背景音则需要设计其他的VAD算法。切换点的判断可以通过BIC贝叶斯准则，最后就是聚类，判断哪些片段属于一个说话人，对于无监督学习算法，先验信息说话人数量显得尤为重要。目前基于深度学习的框架也有不少，比如最近Google出的UIS-RNN。
+- 语音智能分割是基于说话人识别的，说话人识别效果的好坏决定语音分割的效果，当然还有切换点的识别效果也很重要。首先需要用VAD静音检测对语音进行分割，最简单的是用振幅来判断，如果有背景音则需要设计其他的VAD算法。切换点的判断可以通过BIC贝叶斯准则，最后就是聚类，判断哪些片段属于一个说话人，对于无监督学习算法，先验信息说话人数量显得尤为重要。目前基于深度学习的框架也有不少，比如最近Google出的UIS-RNN(其实是另类的聚类方法)，还有法国sidekit团队的S4D。
 + 相关论文：
   ```
   1. FULLY SUPERVISED SPEAKER DIARIZATION
   2. SPAKER DIARIZATION WITH LSTM
+  3. S4D: Speaker Diarization Toolkit in Python
   ```
 + 相关开源地址：
   * https://github.com/google/uis-rnn
   * https://github.com/wq2012/SpectralCluster
+  * https://projets-lium.univ-lemans.fr/s4d
 
 <span id="13"></span>
 13. **语音合成（Text To Speech）**
