@@ -95,6 +95,14 @@
   - 卡尔曼滤波器
   - 均值漂移
   物体跟踪在OpenCV里面都有实现，大多都是针对刚性物体，对于人脸这种物体不适合。
+  - 深度学习的方法：
+  - CFNet
++ 相关论文：
+  ```
+  End-to-end representation learning for Correlation Filter based tracking
+  ```
++ 相关开源地址：
+  * https://github.com/bertinetto/cfnet
 
 <span id="4"></span>
 4. **物体分割（Object Segmentation）**
