@@ -195,7 +195,7 @@
 7. **人脸识别（Face Recognition）**
 + 非神经网络：GaussianFace高斯脸
 + 深度学习：大多数和损失函数设计有关
-+ DeepFace、DeepID系列、VGGFace、FaceNet、CenterLoss、MarginalLoss、SphereFace、ArcFace
++ DeepFace、DeepID系列、VGGFace、FaceNet、CenterLoss、MarginalLoss、SphereFace、ArcFace、AMSoftmax
 + 相关论文：
   ```
   1. Surpassing Human-Level Face Verification Performance on LFW with GaussianFace
@@ -209,6 +209,7 @@
   9. Marginal Loss for Deep Face Recognition
   10. SphereFace: Deep Hypersphere Embedding for Face Recognition
   11. ArcFace: Additive Angular Margin Loss for Deep Face Recognition
+  12. Additive Margin Softmax for Face Verification
   ```
 + 相关开源地址:
   * https://github.com/jangerritharms/GaussianFace
@@ -216,6 +217,7 @@
   * https://github.com/davidsandberg/facenet
   * https://github.com/wy1iu/sphereface
   * https://github.com/xialuxi/arcface-caffe
+  * https://github.com/deepinsight/insightface
 
 <span id="8"></span>
 8. **人像重建（Face Reconstruct）**
