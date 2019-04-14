@@ -294,7 +294,7 @@
 
 <span id="11"></span>
 11. **说话人识别（Speaker Recognition/Identification/Verification）**
-+ 目前深度学习并没有从根本上打败传统方法，但基于d-vector、x-vector的模型和TE2E/GE2E等的损失函数设计在短时长上比较占优势。声纹识别的主要问题在于语音时长、文本无关、开集比对、背景噪声等问题上。传统方法的state-of-the-art是i-vector，采用pLDA信道补偿算法，以前的方法有UBM-GMM和JFA信道补偿，但是需要大量的不同信道的语料样本。传统方法的相关开源框架有Kaldi、ALIZE、SIDEKIT、pyannote-audio等。深度学习的方法有d-vector、x-vector、j-vector（文本有关）以及结合E2E损失函数的模型。还有基于GhostVlad的。
++ 目前深度学习并没有从根本上打败传统方法，但基于d-vector、x-vector的模型和TE2E/GE2E等的损失函数设计在短时长上比较占优势。声纹识别的主要问题在于语音时长、文本无关、开集比对、背景噪声等问题上。传统方法的state-of-the-art是i-vector，采用pLDA信道补偿算法，以前的方法有UBM-GMM和JFA信道补偿，但是需要大量的不同信道的语料样本。传统方法的相关开源框架有Kaldi、ALIZE、SIDEKIT、pyannote-audio等。深度学习的方法有d-vector、x-vector、j-vector（文本有关）以及结合E2E损失函数的模型。还有基于GhostVlad的。直接基于wave信号的SINCNET。
 + 相关开源地址：
   * http://www-lium.univ-lemans.fr/sidekit/
   * https://alize.univ-avignon.fr/
@@ -304,6 +304,7 @@
   * https://github.com/Janghyun1230/Speaker_Verification
   * https://github.com/pyannote/pyannote-audio
   * https://github.com/WeidiXie/VGG-Speaker-Recognition
+  * https://github.com/mravanelli/SincNet
 
 <span id="12"></span>
 12. **说话人语音分割（Speaker Diarization）**
