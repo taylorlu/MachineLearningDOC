@@ -23,6 +23,7 @@
     2. 基于Sparse Coding稀疏编码的，LLC
     3. 基于聚合特征的，Fisher Vector/VLAD
     4. 基于变形部件组合模型的，DPM用到HOG/Latent SVM
+    5. 有关角点的检测和描述，近几年有基于深度学习的方法，如LIFT、DELP、LFNET，缺点是速度慢
   ```
 - 相关论文：
   ```
@@ -32,11 +33,16 @@
     4. Improving the Fisher Kernel for Large-Scale Image Classification 
     5. Aggregating local descriptors into a compact image representation
     6. Object Detection with Discriminatively Trained Part Based Models
+    7. LIFT: Learned Invariant Feature Transform
+    8. Large-Scale Image Retrieval with Attentive Deep Local Feature
+    9. LF-Net: Learning Local Features from Images
   ```
 - 相关开源地址：
   * http://www.vlfeat.org
   * https://github.com/rbgirshick/voc-dpm
   * https://github.com/cbod/cs766-llc
+  * https://github.com/nashory/DeLF-pytorch
+  * https://github.com/vcg-uvic/lf-net-release
 </br>
 
 + 深度学习：
@@ -79,8 +85,13 @@
   - 检索，基于欧式距离的检索有hnsw、Falconn、Faiss等开源库。
 + 相关论文：
   ```
-  Aggregating Deep Convolutional Features for Image Retrieval
-  PARTICULAR OBJECT RETRIEVAL WITH INTEGRAL MAX-POOLING OF CNN ACTIVATIONS
+  1. Aggregating Deep Convolutional Features for Image Retrieval
+  2. PARTICULAR OBJECT RETRIEVAL WITH INTEGRAL MAX-POOLING OF CNN ACTIVATIONS
+  3. Deep Learning of Binary Hash Codes for Fast Image Retrieval
+  4. Learning Compact Binary Descriptors with Unsupervised Deep Neural Networks
+  5. Bags of Local Convolutional Features for Scalable Instance Search
+  6. Deep Image Retrieval: Learning global representations for image search
+  7. Region-Based Image Retrieval Revisited
   ```
 + 相关开源地址：
   * https://github.com/Relja/netvlad
@@ -88,6 +99,7 @@
   * https://github.com/nmslib/hnswlib
   * https://github.com/facebookresearch/faiss
   * https://github.com/FALCONN-LIB/FALCONN
+  * https://github.com/imatge-upc/retrieval-2016-icmr
 
 <span id="3"></span>
 3. **物体跟踪（Object Tracking）**
