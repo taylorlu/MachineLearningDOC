@@ -248,7 +248,7 @@
 9. **OCR字符识别**
 + OCR涉及到字符场景定位和分割，以及字符识别。传统的方法是采用垂直方向直方图形式对字符进行分割，然后一个个字符分别送入分类器进行识别。由于CTC动态规划算法的出现，当今的主流模型是LSTM+CTC，采用和语音识别类似的自动语素分割的方式。检测框一般是水平的，如果要纠正还需要用Hough变换把文本方向纠正。
 + 字符区域检测：
-  CTPN、TextBoxes++、AdvancedEast、TextSnake
+  CTPN、TextBoxes++、AdvancedEast、TextSnake、Mask TextSpotter、DMPNet、RSDD、CRAFT、LOMO
 + 相关论文：
   ```
   1. Detecting Text in Natural Image with Connectionist Text Proposal Network
@@ -260,7 +260,11 @@
   7. Multi-Oriented Text Detection with Fully Convolutional Networks
   8. Accurate Text Localization in Natural Image with Cascaded Convolutional Text Network
   9. TextSnake: A Flexible Representation for Detecting Text of Arbitrary Shapes
-  10. 总结Overview：https://github.com/whitelok/image-text-localization-recognition
+  10. An End-to-End Trainable Neural Network for Spotting Text with Arbitrary Shapes
+  11. Rotation-Sensitive Regression for Oriented Scene Text Detection
+  12. Character Region Awareness for Text Detection
+  13. Look More Than Once: An Accurate Detector for Text of Arbitrary Shapes
+  14. 总结Overview：https://github.com/whitelok/image-text-localization-recognition
   ```
 + 字符识别：
   CRNN、GRCNN
