@@ -285,6 +285,7 @@
   * https://github.com/MichalBusta/DeepTextSpotter
   * https://github.com/Jianfeng1991/GRCNN-for-OCR
   * https://github.com/princewang1994/TextSnake.pytorch
+  * https://github.com/clovaai/deep-text-recognition-benchmark
 
 + 手写字体识别：
   hand written由于各种书法风格以及字体偏细，难度远高于印刷字体。NIPS上发表的几篇基于2维LSTM-RNN的方法，后面又有提速版的attention机制，这种方法支持一段手写文本的自动分行及对齐。后面ECCV又出现了一篇分多步的方法。
