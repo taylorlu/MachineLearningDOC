@@ -312,6 +312,7 @@
   17. 挑战赛：http://rrc.cvc.uab.es
   ```
 + 字符识别：
+  针对wild形变场景，检测到的框有粗糙的矩形，也有精确的多边形，在识别之前一般要进行纠正。关于纠正其实大体分为2个方向，一个是基于character级别的，如TextSnake、ASTER，还有一种是通过TPS+STN网络自动去训练多点纠正的参数，这在很多Paper里面都有介绍。
   CRNN、GRCNN、CRAFT、ASTER
 + 相关论文：
   ```
