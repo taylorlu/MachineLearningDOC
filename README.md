@@ -8,7 +8,7 @@
 ##### 6.  [人脸关键点对齐（Face Alignment）](#6)
 ##### 7.  [人脸识别（Face Recognition）](#7)
 ##### 8.  [人像重建（Face Reconstruct）](#8)
-##### 9.  [OCR字符识别](#9)
+##### 9.  [OCR字符识别（Wild Scene & Hand Written）](#9)
 ##### 10.  [语音识别（Automatic Speech Recognition/Speech to Text）](#10)
 ##### 11.  [说话人识别（Speaker Recognition/Identification/Verification）](#11)
 ##### 12.  [说话人语音分割（Speaker Diarization）](#12)
@@ -287,8 +287,8 @@
   * https://github.com/anhttran/extreme_3d_faces
 
 <span id="9"></span>
-9. **OCR字符识别**
-+ OCR涉及到字符场景定位和分割，以及字符识别。传统的方法是采用垂直方向直方图形式对字符进行分割，然后一个个字符分别送入分类器进行识别。由于CTC动态规划算法的出现，当今的主流模型是LSTM+CTC，采用和语音识别类似的自动语素分割的方式。检测框一般是水平的，如果要纠正还需要用Hough变换把文本方向纠正。近几年又出现了很多支持不同形状的文本区域检测方法，一种是基于分割的，如PixelLink、TextSnake，一种是基于回归的，如TextBoxes、DMPNet、RSDD，还有结合2者的，如SSTD。还有检测和识别端到端的，如FOTS、EAA、Mask TextSpotter。
+9. **OCR字符识别（Wild Scene & Hand Written）**
++ OCR涉及到字符场景定位和分割，以及字符识别。传统的方法是采用垂直方向直方图形式对字符进行分割，然后一个个字符分别送入分类器进行识别。由于CNN/RNN/CTC动态规划算法及Attention机制的出现，当今的主流模型是CNN+RNN+CTC，采用和语音识别类似的自动语素分割的方式。检测框一般是水平的，如果要纠正还需要用Hough变换把文本方向纠正。近几年又出现了很多支持不同形状的文本区域检测方法，一种是基于分割的，如PixelLink、TextSnake，一种是基于回归的，如TextBoxes、DMPNet、RSDD，还有结合2者的，如SSTD。还有检测和识别端到端的，如FOTS、EAA、Mask TextSpotter。
 + 字符区域检测：
   CTPN、EAST、TextBoxes++、AdvancedEast、TextSnake、Mask TextSpotter、DMPNet、RSDD、LOMO、PSENet、Pixel-Anchor
 + 相关论文：
@@ -312,7 +312,7 @@
   17. 挑战赛：http://rrc.cvc.uab.es
   ```
 + 字符识别：
-  针对wild形变场景，检测到的框有粗糙的矩形，也有精确的多边形，在识别之前一般要进行纠正。关于纠正其实大体分为2个方向，一个是基于character级别的，如TextSnake、ASTER，还有一种是通过TPS+STN网络自动去训练多点纠正的参数，这在很多Paper里面都有介绍。
+  针对wild形变场景，检测到的框有粗糙的矩形，也有精确的多边形，在识别之前一般要进行纠正。关于纠正其实大体分为2个方向，一个是基于character划分的，如TextSnake、ASTER、Char-Net，还有一种是通过TPS+STN网络自动去训练多点纠正的参数，这在很多Paper里面都有介绍。</br>
   CRNN、GRCNN、CRAFT、ASTER
 + 相关论文：
   ```
@@ -320,6 +320,7 @@
   2. An End-to-End Trainable Neural Network for Image-based Sequence Recognition and Its Application to Scene Text Recognition
   3. What is wrong with scene text recognition model comparisons? dataset and model analysis
   4. ASTER: An Attentional Scene Text Recognizer with Flexible Rectification
+  5. Char-Net: A Character-Aware Neural Network for Distorted Scene Text Recognition
   ```
 + 相关开源地址：
   * https://github.com/eragonruan/text-detection-ctpn
