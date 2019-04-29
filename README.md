@@ -1,4 +1,4 @@
-## 图像、人脸、OCR、语音相关算法整理
+## 图像、人脸、OCR、语音相关算法整理 &#955;
 ##### [概述-图像语音机器学习（Outline-Image & Audio & Machine Learning）](#0)
 ##### 1.  [通用物体检测和识别（General Object Detection/Recognition）](#1)
 ##### 2.  [特定物体检测和识别和检索（Specific Object Detection/CBIR）](#2)
@@ -44,7 +44,21 @@
   4. 图像融合
   ```
   图像融合可用在深度学习后处理，比如分割后的物体融合到另一个背景，人像换脸等。常用的有[poisson Image Editing](https://www.cs.virginia.edu/~connelly/class/2014/comp_photo/proj2/poisson.pdf)
+  
++ 语音：
+  ```
+  1. wav和mfcc
+  ```
+  由于语音是含有时域信息的，在进行实时频域转换的时候会采用加窗的短时STFT变换，根据不同的窗函数，会生成不同频段的频谱值。mfcc是基于梅尔频率的倒谱，是非线性的对数倒频谱。在进行ASR、SV时，一般都会先将wav文件转成mfcc进行处理，当然也不排除直接用wav的，比如wavenet, sincnet等。采用mfcc的好处是数据量比较小，而且比较直观，可采用CNN网络对其进行处理。
+  ```
+  2. 传统的听歌识曲
+  ```
 
++ 统计学习：
+  ```
+  1. SVM支持向量机
+  ```
+  
 <span id="1"></span>
 1. **通用物体检测和识别（General Object Detection/Recognition）**
 + 传统方法：
