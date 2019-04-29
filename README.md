@@ -312,12 +312,13 @@
   17. 挑战赛：http://rrc.cvc.uab.es
   ```
 + 字符识别：
-  CRNN、GRCNN、CRAFT
+  CRNN、GRCNN、CRAFT、ASTER
 + 相关论文：
   ```
   1. Gated Recurrent Convolution Neural Network for OCR
   2. An End-to-End Trainable Neural Network for Image-based Sequence Recognition and Its Application to Scene Text Recognition
   3. What is wrong with scene text recognition model comparisons? dataset and model analysis
+  4. ASTER: An Attentional Scene Text Recognizer with Flexible Rectification
   ```
 + 相关开源地址：
   * https://github.com/eragonruan/text-detection-ctpn
@@ -328,6 +329,7 @@
   * https://github.com/Jianfeng1991/GRCNN-for-OCR
   * https://github.com/princewang1994/TextSnake.pytorch
   * https://github.com/clovaai/deep-text-recognition-benchmark
+  * https://github.com/bgshih/aster
 
 + 手写字体识别：
   hand written由于各种书法风格以及字体偏细，难度远高于印刷字体。NIPS上发表的几篇基于2维LSTM-RNN的方法，后面又有提速版的attention机制，这种方法支持一段手写文本的自动分行及对齐。后面ECCV又出现了一篇分多步的方法。
