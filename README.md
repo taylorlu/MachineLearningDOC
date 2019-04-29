@@ -16,7 +16,7 @@
 ##### 14.  [声纹转换（Voice Conversion）](#14)
 ##### 15.  [人脸生物特征（Age Gender）](#15)
 <span id="0"></span>
-0. **概述-图像语音（Outline-Image & Audio & Machine Learning）**
+**概述-图像语音机器学习（Outline-Image & Audio & Machine Learning）**
 + 图像：
   ```
   1. 变换(Transform)，分为旋转、放缩、平移、仿射、投影
@@ -32,7 +32,7 @@
   ```
   一阶算子有Roberts、Sobel、Prewitt，由于只求了一阶导数，所以一次只能检测一个方向的边缘。
   二阶算子有Laplace、LoG、DoG，是角点检测的第一步，不抗噪。
-  卷积其实就是信号处理里面的求积再求和运算，在CNN中，卷积核是需要训练的参数，但由于大多数是共享的，参数量并不大，一般不需要Dropout。由于训练出的卷积核大多并不对称，所以并没有旋转不变性(rotation invariant)，起初对于旋转是通过Data Argument，在NIPS2015上，[spatial transformer networks](https://papers.nips.cc/paper/5854-spatial-transformer-networks.pdf)的出现，旋转图像对于数据增强的依赖大大降低。
+  卷积其实就是信号处理里面的求积再求和运算，在CNN中，卷积核是需要训练的参数，但由于大多数是共享的，参数量并不大，一般不需要Dropout。由于训练出的卷积核大多并不对称，所以并没有旋转不变性(rotation invariant)，对于放缩和平移不变性也只能由pooling层起很小的作用。最初的方法是通过Data Argument，在NIPS2015上，[spatial transformer networks](https://papers.nips.cc/paper/5854-spatial-transformer-networks.pdf)提出了一种自动学习变换矩阵的BP网络，对于数据增强的依赖大大降低。
   ```
   3. 大津阈值二值化，分水岭分割
   离散傅里叶变换DFT，离散余弦变换DCT，小波变换Wavelet
@@ -109,7 +109,7 @@
 
 <span id="2"></span>
 2. **特定物体检测和识别和检索（Specific Object Detection/CBIR）**
-  - 特定物体只识别一张特定的图，不能进行大样本训练，也即不需要进行训练和学习。大多数只是用Artificial Feature手工特征，比如特征点，而且对于刚性物体，特征点匹配可以用SVD分解和RANSAC计算出仿射变换矩阵，进而判断物体边缘的方向。也有基于神经网络的，如R-MAC，NetVlad，但用的都是预训练模型，不具有旋转不变性。
+  - 特定物体只识别一张特定的图，不能进行大样本训练，也即不需要进行训练和学习。大多数只是用Artificial Feature手工特征，比如特征点，而且对于刚性物体，特征点匹配可以用SVD分解和RANSAC计算出仿射变换矩阵，进而判断物体边缘的方向。也有基于神经网络的，如R-MAC，NetVlad，但用的都是backpone预训练模型。
   - 特征点匹配，基于欧氏距离的，如SIFT/SURF，基于海明距离的，如AKAZE/FREAK，欧氏距离的检索可以用KD-Tree或者其他算法如hnsw、Falconn，海明距离的检索用LSH。
   - 基于Fisher Vector/VLAD，采用随机超平面的方式切换成海明距离进行检索
   - 检索，基于欧式距离的检索有hnsw、Falconn、Faiss等开源库。
@@ -137,7 +137,7 @@
   - 卡尔曼滤波器
   - 均值漂移
   物体跟踪在OpenCV里面都有实现，大多都是针对刚性物体，对于人脸这种物体不适合。
-  - 深度学习的方法：
+  深度学习的方法：
   - CFNet
 + 相关论文：
   ```
@@ -359,7 +359,7 @@
 
 <span id="11"></span>
 11. **说话人识别（Speaker Recognition/Identification/Verification）**
-+ 目前深度学习并没有从根本上打败传统方法，但基于d-vector、x-vector的模型和TE2E/GE2E等的损失函数设计在短时长上比较占优势。声纹识别的主要问题在于语音时长、文本无关、开集比对、背景噪声等问题上。传统方法的state-of-the-art是i-vector，采用pLDA信道补偿算法，以前的方法有UBM-GMM和JFA信道补偿，但是需要大量的不同信道的语料样本。传统方法的相关开源框架有Kaldi、ALIZE、SIDEKIT、pyannote-audio等。深度学习的方法有d-vector、x-vector、j-vector（文本有关）以及结合E2E损失函数的模型。还有基于GhostVlad的。直接基于wave信号的SINCNET。
++ 声纹识别的主要问题在于语音时长、文本无关、开集比对、背景噪声等问题上。目前基于d-vector、x-vector的深度学习模型和TE2E/GE2E等的损失函数设计在短时长上比较占优势。传统方法的state-of-the-art是i-vector，采用pLDA信道补偿算法，所有基于深度学习的模型都会引用ivector的ERR作为baseline进行比对。以前的方法有UBM-GMM和JFA信道补偿，但是需要大量的不同信道的语料样本。传统方法的相关开源框架有Kaldi、ALIZE、SIDEKIT、pyannote-audio等。深度学习的方法有d-vector、x-vector、j-vector（文本有关）以及结合E2E损失函数的模型。还有基于GhostVlad和直接基于wave信号的SINCNET。
 + 相关开源地址：
   * http://www-lium.univ-lemans.fr/sidekit/
   * https://alize.univ-avignon.fr/
