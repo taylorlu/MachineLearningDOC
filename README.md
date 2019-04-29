@@ -1,4 +1,5 @@
 ## 图像、人脸、OCR、语音相关算法整理
+##### [概述-图像语音](#0)
 ##### 1.  [通用物体检测和识别（General Object Detection/Recognition）](#1)
 ##### 2.  [特定物体检测和识别和检索（Specific Object Detection/CBIR）](#2)
 ##### 3.  [物体跟踪（Object Tracking）](#3)
@@ -14,7 +15,17 @@
 ##### 13.  [语音合成（Text To Speech）](#13)
 ##### 14.  [声纹转换（Voice Conversion）](#14)
 ##### 15.  [人脸生物特征（Age Gender）](#15)
-
+<span id="0"></span>
+1. **概述-图像语音**
++ 图像：
+  1. 变换(Transform)，分为旋转、放缩、平移、仿射、投影
+  ```
+  Rotation和Scale可以看做是一个SVD分解，对于二维图像，对应2x2矩阵。
+  Translate为了支持矩阵相加，需要扩充一列，所以前三者结合变成一个2x3或3x3矩阵。
+  Affine加上了翻转和斜切，保持点的共线性和直线的平行性，共有6个自由度dof。
+  Projection变换不是线性的，共有8个自由度。
+  可参考https://courses.cs.washington.edu/courses/csep576/11sp/pdf/Transformations.pdf
+  ```
 <span id="1"></span>
 1. **通用物体检测和识别（General Object Detection/Recognition）**
 + 传统方法：
