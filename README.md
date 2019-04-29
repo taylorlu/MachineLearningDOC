@@ -1,5 +1,5 @@
 ## 图像、人脸、OCR、语音相关算法整理
-##### [概述-图像语音](#0)
+##### [概述-图像语音机器学习（Outline-Image & Audio & Machine Learning）](#0)
 ##### 1.  [通用物体检测和识别（General Object Detection/Recognition）](#1)
 ##### 2.  [特定物体检测和识别和检索（Specific Object Detection/CBIR）](#2)
 ##### 3.  [物体跟踪（Object Tracking）](#3)
@@ -16,16 +16,35 @@
 ##### 14.  [声纹转换（Voice Conversion）](#14)
 ##### 15.  [人脸生物特征（Age Gender）](#15)
 <span id="0"></span>
-1. **概述-图像语音**
+0. **概述-图像语音（Outline-Image & Audio & Machine Learning）**
 + 图像：
+  ```
   1. 变换(Transform)，分为旋转、放缩、平移、仿射、投影
   ```
   Rotation和Scale可以看做是一个SVD分解，对于二维图像，对应2x2矩阵。
   Translate为了支持矩阵相加，需要扩充一列，所以前三者结合变成一个2x3或3x3矩阵。
   Affine加上了翻转和斜切，保持点的共线性和直线的平行性，共有6个自由度dof。
   Projection变换不是线性的，共有8个自由度。
-  可参考https://courses.cs.washington.edu/courses/csep576/11sp/pdf/Transformations.pdf
+  可参考[Transformations](https://courses.cs.washington.edu/courses/csep576/11sp/pdf/Transformations.pdf)。
+  通过对变换做处理，可用于变形OCR的纠正，比如[TPS算法](https://profs.etsmtl.ca/hlombaert/thinplates)。
   ```
+  2. 卷积(convolution)，分为一阶、二阶
+  ```
+  一阶算子有Roberts、Sobel、Prewitt，由于只求了一阶导数，所以一次只能检测一个方向的边缘。
+  二阶算子有Laplace、LoG、DoG，是角点检测的第一步，不抗噪。
+  卷积其实就是信号处理里面的求积再求和运算，在CNN中，卷积核是需要训练的参数，但由于大多数是共享的，参数量并不大，一般不需要Dropout。由于训练出的卷积核大多并不对称，所以并没有旋转不变性(rotation invariant)，起初对于旋转是通过Data Argument，在NIPS2015上，[spatial transformer networks](https://papers.nips.cc/paper/5854-spatial-transformer-networks.pdf)的出现，旋转图像对于数据增强的依赖大大降低。
+  ```
+  3. 大津阈值二值化，分水岭分割
+  离散傅里叶变换DFT，离散余弦变换DCT，小波变换Wavelet
+  图像的一阶二阶矩，形状描述
+  颜色空间(RGB, YUV, HSV)
+  以上用于视频编码和图像分析的多
+  ```
+  ```
+  4. 图像融合
+  ```
+  图像融合可用在深度学习后处理，比如分割后的物体融合到另一个背景，人像换脸等。常用的有[poisson Image Editing](https://www.cs.virginia.edu/~connelly/class/2014/comp_photo/proj2/poisson.pdf)
+
 <span id="1"></span>
 1. **通用物体检测和识别（General Object Detection/Recognition）**
 + 传统方法：
