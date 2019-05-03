@@ -405,7 +405,9 @@
   2. Scan, Attend and Read: End-to-End Handwritten Paragraph Recognition with MDLSTM Attention
   3. Joint Line Segmentation and Transcription for End-to-End Handwritten Paragraph Recognition
   4. Start, Follow, Read: End-to-End Full-Page Handwriting Recognition
-  5. Handwriting Recognition of Historical Documents with few labeled data
+  5. Handwriting Recognition with Large Multidimensional Long Short-Term Memory Recurrent Neural Networks
+  6. Handwriting Recognition of Historical Documents with few labeled data
+  7. Measuring Human Perception to Improve Handwritten Document Transcription
   ```
 + 相关开源地址：
   * https://github.com/cwig/start_follow_read
