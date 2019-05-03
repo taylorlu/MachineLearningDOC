@@ -49,15 +49,65 @@
   ```
   1. wav和mfcc
   ```
-  由于语音是含有时域信息的，在进行实时频域转换的时候会采用加窗的短时STFT变换，根据不同的窗函数，会生成不同频段的频谱值。mfcc是基于梅尔频率的倒谱，是非线性的对数倒频谱。在进行ASR、SV时，一般都会先将wav文件转成mfcc进行处理，当然也不排除直接用wav的，比如wavenet, sincnet等。采用mfcc的好处是数据量比较小，而且比较直观，可采用CNN网络对其进行处理。
+  由于语音是含有时域信息的，在进行实时频域转换的时候会采用加窗的短时STFT变换，根据不同的窗函数，会生成不同频段的频谱值。mfcc是基于梅尔频率的倒谱，是非线性的对数倒频谱。在进行ASR、SV时，一般都会先将wav文件转成mfcc进行处理，当然也不排除直接用wav的，比如wavenet, sincnet等。采用mfcc的好处是既含有时域信息也含有频域信息，由小窗函数将数据压缩成二维可采用普通CNN网络对其进行处理。
   ```
-  2. 传统的听歌识曲
+  2. 听歌识曲，哼唱识别
   ```
+  曾经研究过的传统方法，基于mfcc和倒排索引。
+  1. A Highly Robust Audio Fingerprinting System
+  2. ROBUST AUDIO FINGERPRINT EXTRACTION ALGORITHM
+  3. An Industrial-Strength Audio Search Algorithm</br>
+  深度学习的检索</br>
+  A Tutorial on Deep Learning for Music Information Retrieval
+
 
 + 统计学习：
   ```
   1. SVM支持向量机
   ```
+  这个是老外写的一本《支持向量机导论》，网上中文英文都有。</br>
+  an introduction to support vector machines and other kernel-based learning methods</br>
+  包含从核函数到VC维最大泛化间隔，到KKT不等式约束的拉格朗日对偶问题，再到SMO算法求解拉格朗日乘子，算是很完整的一个教材了。
+
+  ```
+  2. Adaboost
+  ```
+  从弱学习机到强学习机，是一种迭代算法，只要分类器比随机分类器好一点，它就能逐渐迭代出一个强分类器。优点是不容易过拟合，缺点对噪声敏感。</br>
+  1. A Decision-Theoretic Generalization of On-Line Learning and an Application to Boosting
+  2. Multi-class AdaBoost
+
+  ```
+  3. Decision tree决策树
+  ```
+  主要用在数据挖掘，最优树的生成常用有ID3/4/5,CART等算法，缺点是不稳定，特别是样本数量不一致的情况。
+  
+  ```
+  4. 贝叶斯网络、随机森林
+  ```
+  
+  ```
+  5. EM/GMM模型
+  ```
+  含有隐变量的聚类模型。隐变量/隐分布就是每个概率分布的权重以及每个样本属于每个分布的概率。</br>
+  EM算法分为2步，E-Step是固定已知变量利用Jensen不等式求对数似然函数的极值，更新隐变量，M-Step是在固定隐变量求整个似然函数的极值，更新已知变量
+  GMM模型是先假定分布是高斯分布，已知变量即均值和方差，隐变量即高斯分布的权重。</br>
+  EM算法对初始值敏感，无法保证全局最优。用途很多，比如聚类、声纹模型UBM。</br>
+  神经网络求解EM算法:</br>
+  1. Neural Expectation Maximization</br>
+  https://github.com/sjoerdvansteenkiste/Neural-EM
+  
+  ```
+  6. 无监督聚类Kmeans、Meanshift,基于图模型的Spectral Clustering
+  ```
+  
+  ```
+  7. 不用指定聚类个数的模型DBSCAN、Chinese Whisper
+  ```
++ 深度学习：
+  深度学习即完全基于神经网络的模型，包括CNN空域、RNN时域等模型，重点在于网络设计、损失函数设计，以及优化器这3方面。</br>
+  **网络设计**代表性的有CNN、空洞卷积、通道可分离卷积、DropOut、RNN/LSTM/GRU、Attention/Self-Attention/Transformer、Resnet、Inception系列、Squeezenet/Mobilenet/Shufflenet等</br>
+  **损失函数**代表性的有Triplet loss、Center loss、SphereFace、ArcFace、AMSoftmax等</br>
+  **优化器**主要有SGD、Moment、Adagrad、Adadelta、Adam、RMSprop、Adabound、Admm等，还有其他加快收敛防止过拟合的方法如Batchnorm，正则化等。
   
 <span id="1"></span>
 1. **通用物体检测和识别（General Object Detection/Recognition）**
@@ -360,6 +410,7 @@
 + 相关开源地址：
   * https://github.com/cwig/start_follow_read
   * https://github.com/0x454447415244/HandwritingRecognitionSystem
+  * http://www.tbluche.com/scan_attend_read.html
 
 <span id="10"></span>
 10. **语音识别（Automatic Speech Recognition/Speech to Text）**
