@@ -397,6 +397,7 @@
   * https://github.com/clovaai/deep-text-recognition-benchmark
   * https://github.com/bgshih/aster
   * https://github.com/liuheng92/tensorflow_PSENet
+  * https://github.com/whai362/PSENet
 
 + 手写字体识别：
   hand written由于各种书法风格以及字体偏细，难度远高于印刷字体。NIPS上发表的几篇基于2维LSTM-RNN的方法，后面又有提速版的attention机制，这种方法支持一段手写文本的自动分行及对齐。后面ECCV又出现了一篇分多步的方法。
@@ -410,6 +411,8 @@
   6. Handwriting Recognition of Historical Documents with few labeled data
   7. Measuring Human Perception to Improve Handwritten Document Transcription
   8. Learning Spatial-Semantic Context with Fully Convolutional Recurrent Network for Online Handwritten Chinese Text Recognition
+  9. Gated Convolutional Recurrent Neural Networks for Multilingual Handwriting Recognition
+  10. Joint Recognition of Handwritten Text and Named Entities with a Neural End-to-end Model
   ```
 + 相关开源地址：
   * https://github.com/cwig/start_follow_read
