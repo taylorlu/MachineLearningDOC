@@ -387,6 +387,7 @@
   5. Char-Net: A Character-Aware Neural Network for Distorted Scene Text Recognition
   6. MORAN: A Multi-Object Rectified Attention Network for Scene Text Recognition
   7. SEE: Towards Semi-Supervised End-to-End Scene Text Recognition
+  8. ESIR: End-to-end Scene Text Recognition via Iterative Image Rectification
   ```
 + 相关开源地址：
   * https://github.com/eragonruan/text-detection-ctpn
