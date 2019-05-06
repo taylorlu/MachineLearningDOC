@@ -377,7 +377,7 @@
   ```
 + 字符识别：
   针对wild形变场景，检测到的框有粗糙的矩形，也有精确的多边形，在识别之前一般要进行纠正。关于纠正其实大体分为2个方向，一个是基于character划分的，如TextSnake、ASTER、Char-Net，还有一种是通过TPS+STN网络自动去训练多点纠正的参数，这在很多Paper里面都有介绍。</br>
-  CRNN、GRCNN、CRAFT、ASTER
+  CRNN、GRCNN、CRAFT、ASTER、MORAN、ESIR，支持垂直方向文本识别的AON
 + 相关论文：
   ```
   1. Gated Recurrent Convolution Neural Network for OCR
@@ -388,6 +388,8 @@
   6. MORAN: A Multi-Object Rectified Attention Network for Scene Text Recognition
   7. SEE: Towards Semi-Supervised End-to-End Scene Text Recognition
   8. ESIR: End-to-end Scene Text Recognition via Iterative Image Rectification
+  9. AON: Towards Arbitrarily-Oriented Text Recognition
+  10. Simultaneous Recognition of Horizontal and Vertical Text in Natural Images
   ```
 + 相关开源地址：
   * https://github.com/eragonruan/text-detection-ctpn
@@ -403,6 +405,7 @@
   * https://github.com/whai362/PSENet
   * https://github.com/Canjie-Luo/MORAN_v2
   * https://github.com/Bartzi/see
+  * https://github.com/huizhang0110/AON
 
 + 手写字体识别：
   hand written由于各种书法风格以及字体偏细，难度远高于印刷字体。NIPS上发表的几篇基于2维LSTM-RNN的方法，后面又有提速版的attention机制，这种方法支持一段手写文本的自动分行及对齐。后面ECCV又出现了一篇分多步的方法。
