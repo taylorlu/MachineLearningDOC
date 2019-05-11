@@ -352,7 +352,7 @@
 
 <span id="9"></span>
 9. **OCR字符识别（Wild Scene & Hand Written）**
-+ OCR涉及到字符场景定位和分割，以及字符识别。传统的方法是采用垂直方向直方图形式对字符进行分割，然后一个个字符分别送入分类器进行识别。由于CNN/RNN/CTC动态规划算法及Attention机制的出现，当今的主流模型是CNN+RNN+CTC，采用和语音识别类似的自动语素分割的方式。检测框一般是水平的，如果要纠正还需要用Hough变换把文本方向纠正。近几年又出现了很多支持不同形状的文本区域检测方法，一种是基于分割的，如PixelLink、TextSnake，一种是基于回归的，如TextBoxes、DMPNet、RSDD，还有结合2者的，如SSTD。还有检测和识别端到端的，如FOTS、EAA、Mask TextSpotter。
++ OCR涉及到字符场景定位和分割，以及字符识别。传统的方法是采用垂直方向直方图形式对字符进行分割，然后一个个字符分别送入分类器进行识别。由于CNN/RNN/CTC动态规划算法及Attention机制的出现，当今的主流模型是CNN+RNN+CTC，采用和语音识别类似的自动语素分割的方式。检测框一般是水平的，如果要纠正还需要用Hough变换把文本方向纠正。近几年又出现了很多支持不同形状的文本区域检测方法，一种是基于分割的，如PixelLink、TextSnake，一种是基于回归的，如TextBoxes、DMPNet、RSDD，还有结合2者的，如SSTD。还有检测和识别端到端的，如FOTS、EAA、Mask TextSpotter、STN-OCR。
 + 字符区域检测：
   CTPN、EAST、TextBoxes++、AdvancedEast、TextSnake、Mask TextSpotter、DMPNet、RSDD、LOMO、PSENet、Pixel-Anchor
 + 相关论文：
@@ -374,10 +374,12 @@
   15. Pixel-Anchor: A Fast Oriented Scene Text Detector with Combined Networks
   16. 总结Overview：https://github.com/whitelok/image-text-localization-recognition
   17. 挑战赛：http://rrc.cvc.uab.es
+  18. An end-to-end textspotter with explicit alignment and attention
+  19. STN-OCR: A single Neural Network for Text Detection and Text Recognition
   ```
 + 字符识别：
   针对wild形变场景，检测到的框有粗糙的矩形，也有精确的多边形，在识别之前一般要进行纠正。关于纠正其实大体分为2个方向，一个是基于character划分的，如TextSnake、ASTER、Char-Net，还有一种是通过TPS+STN网络自动去训练多点纠正的参数，这在很多Paper里面都有介绍。</br>
-  CRNN、GRCNN、CRAFT、ASTER、MORAN、ESIR，支持垂直方向文本识别的AON
+  CRNN、GRCNN、CRAFT、ASTER、MORAN、ESIR、FAN，支持垂直方向文本识别的AON
 + 相关论文：
   ```
   1. Gated Recurrent Convolution Neural Network for OCR
@@ -390,6 +392,7 @@
   8. ESIR: End-to-end Scene Text Recognition via Iterative Image Rectification
   9. AON: Towards Arbitrarily-Oriented Text Recognition
   10. Simultaneous Recognition of Horizontal and Vertical Text in Natural Images
+  11. Focusing Attention: Towards Accurate Text Recognition in Natural Images
   ```
 + 相关开源地址：
   * https://github.com/eragonruan/text-detection-ctpn
@@ -406,9 +409,10 @@
   * https://github.com/Canjie-Luo/MORAN_v2
   * https://github.com/Bartzi/see
   * https://github.com/huizhang0110/AON
+  * https://github.com/Bartzi/stn-ocr
 
 + 手写字体识别：
-  hand written由于各种书法风格以及字体偏细，难度远高于印刷字体。NIPS上发表的几篇基于2维LSTM-RNN的方法，后面又有提速版的attention机制，这种方法支持一段手写文本的自动分行及对齐。后面ECCV又出现了一篇分多步的方法。
+  hand written由于各种书法风格，难度远高于印刷字体。NIPS上发表的几篇基于2维LSTM-RNN的方法，后面又有提速版的attention机制，这种方法支持一段手写文本的自动分行及对齐。后面ECCV又出现了一篇分多步的方法。
 + 相关论文：
   ```
   1. Offline Handwriting Recognition with Multidimensional Recurrent Neural Networks
