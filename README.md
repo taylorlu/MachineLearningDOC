@@ -378,7 +378,7 @@
   19. STN-OCR: A single Neural Network for Text Detection and Text Recognition
   ```
 + 字符识别：
-  针对wild形变场景，检测到的框有粗糙的矩形，也有精确的多边形，在识别之前一般要进行纠正。关于纠正其实大体分为2个方向，一个是基于character划分的，如TextSnake、ASTER、Char-Net，还有一种是通过TPS+STN网络自动去训练多点纠正的参数，这在很多Paper里面都有介绍。</br>
+  针对wild形变场景，检测到的框有粗糙的矩形，也有精确的多边形，在识别之前一般要进行纠正。关于纠正其实大体分为2个方向，一个是基于character划分的，如TextSnake、Char-Net，还有一种是通过TPS+STN网络自动去训练多点纠正的参数，这在很多Paper里面都有介绍。</br>
   CRNN、GRCNN、CRAFT、ASTER、MORAN、ESIR、FAN，支持垂直方向文本识别的AON
 + 相关论文：
   ```
