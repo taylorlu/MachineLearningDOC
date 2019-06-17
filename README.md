@@ -492,6 +492,7 @@
   8. Parallel WaveNet: Fast High-Fidelity Speech Synthesis
   9. ClariNet: Parallel Wave Generation in End-to-End Text-to-Speech
   10. SAMPLE EFFICIENT ADAPTIVE TEXT-TO-SPEECH
+  11. FastSpeech: Fast, Robust and Controllable Text to Speech
   ```
 + 相关开源地址：
   * https://github.com/ibab/tensorflow-wavenet
@@ -500,6 +501,7 @@
   * https://github.com/c1niv/Voiceloop_TensorFlow
   * https://github.com/israelg99/deepvoice
   * https://github.com/andabi/parallel-wavenet-vocoder
+  * https://github.com/xcmyz/FastSpeech
 
 <span id="14"></span>
 14.	**声纹转换（Voice Conversion）**
